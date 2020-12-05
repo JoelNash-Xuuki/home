@@ -1,0 +1,69 @@
+set editor		= vim
+
+#IMAP
+set imap_user	= joelnash
+set imap_pass ="chiClis12!"
+set folder =imaps://joelnash@xuuki.xyz
+set spoolfile	= +INBOX
+
+mailboxes		=INBOX =Sent =Trash =Junk =Lilypond
+set imap_check_subscribed
+
+#Sidebar
+set sidebar_visible = yes
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
+
+bind index,pager B sidebar-toggle-visible
+
+set pager_index_lines=10
+
+# Store message headers locally to speed things up.
+# # If hcache is a folder, Mutt will create sub cache folders for each account which may speeds things up even more.
+set header_cache = ~/.cache/mutt
+#
+# # Store messages locally to speed things up, like searching message bodies.
+# # Can be the same folder as header_cache.
+# # This will cost important disk usage according to your e-mail amount.
+set message_cachedir = "~/.cache/mutt"
+#
+# # Specify where to save and/or look for postponed messages.
+set postponed = "+Drafts"
+#
+# # Allow Mutt to open a new IMAP connection automatically.
+unset imap_passive
+#
+# # Keep the IMAP connection alive by polling intermittently (time in seconds).
+set imap_keepalive = 300
+#
+# # How often to check for new mail (time in seconds).
+set mail_check = 120
+
+##SMTP
+set record = "+Sent"
+set trash  = "+Trash"
+
+set abort_unmodified = no
+#
+set my_user=joelnash
+#
+set realname = 'Joel Nash'
+set from = "joelnash@xuuki.xyz"
+set use_from = yes
+
+# SMTP
+#set smtp_pass = $my_pass
+set smtp_url=smtps://joelnash@xuuki.xyz # this deviates from instructions? ie. no port number
+
+set ssl_starttls = yes
+#
+set ssl_force_tls = yes
+
+set smtp_authenticators = "login"
+
+#-------HTML Rendering 
+#
+#
+auto_view text/html # view html automatically 
+alternative_order text/plain text/enriched text/html # save html for last
+
